@@ -1,5 +1,5 @@
 function Baird(){
-  this.dim = createVector(100, 150);
+  this.dim = createVector(100, map( (10*height)/100, 0, height, height, 0));
   this.y = false;
   this.jumpSpace = 0;
 };
