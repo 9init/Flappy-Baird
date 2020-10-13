@@ -4,10 +4,11 @@ function Wall(){
   this.wall_size = 80;
   this.speed = 5
   this.counter = 0;
+  this.addWall()
 }
 
 Wall.prototype.update=function(){
-  if (this.counter++ == floor(300/this.speed)   ){
+  if (this.counter++ == floor(500/this.speed)   ){
     this.addWall();
     this.counter = 0;
   }
@@ -51,6 +52,7 @@ Wall.prototype.hit = function (baird){
   let {x, y} = baird.position;
   if( (y <= up.y || y >= down.y) && (x >= up.x && x <= up.x+this.wall_size) ){
     baird.highLight();
+    return true;
   }
 };
 
