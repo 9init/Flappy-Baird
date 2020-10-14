@@ -15,7 +15,6 @@ Wall.prototype.update=function(){
   if(this.walls.length != 0 && this.walls[0].up.x + this.wall_size <= 0){
     this.walls.shift();
   }
-  this.show();
 }
 
 Wall.prototype.show = function(){
@@ -33,7 +32,7 @@ Wall.prototype.show = function(){
 }
 
 Wall.prototype.addWall = function(){
-  let percentage = 60;
+  let percentage = 70;
   let wallLength = floor(random((height*percentage)/100));
   let wallInfo = new WallInfo();
   let x = width;

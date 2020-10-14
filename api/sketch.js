@@ -1,6 +1,8 @@
-const POPULATION = 100;
+const POPULATION = 300;
 let bairds = [];
+let savedBairds = []
 let wall;
+
 function setup(){
   createCanvas(1000, 500);
   for(let i = 0; i < POPULATION; i++){
@@ -23,10 +25,11 @@ function draw(){
     baird.think(wall);
     baird.update();
     baird.show();
-    if(wall.hit(baird))
-      bairds.splice(i, 1);
+    if(wall.hit(baird) || baird.offScreen())
+      savedBairds.push(bairds.splice(i, 1));
   }
-  
+  wall.show();
+  if(bairds.length == 0)
+    newGeneration();
 
-  
 }
